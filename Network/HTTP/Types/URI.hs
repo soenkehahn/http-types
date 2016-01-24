@@ -198,7 +198,7 @@ urlEncodeBuilder True  = urlEncodeBuilder' unreservedQS
 urlEncodeBuilder False = urlEncodeBuilder' unreservedPI
 
 -- | Percent-encoding for URLs.
-urlEncode :: Bool -- ^ Whether to decode '+' to ' '
+urlEncode :: Bool -- ^ Whether to encode ' ' to '+'
           -> B.ByteString -- ^ The ByteString to encode as URL
           -> B.ByteString -- ^ The encoded URL
 urlEncode q = Blaze.toByteString . urlEncodeBuilder q
